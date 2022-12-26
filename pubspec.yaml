@@ -33,6 +33,7 @@ dependencies:
   flutter:
     sdk: flutter
   google_fonts: ^3.0.1
+  local_hero: ^0.2.0
   simplified_flutter_animations: ^1.0.0+1
 
 dev_dependencies:

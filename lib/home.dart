@@ -56,6 +56,7 @@ class HomeScreen extends StatelessWidget {
                     text: "Play!",
                     color: Colors.white,
                     textColor: Colors.black,
+                    size: 200,
                     onPressed: () {
                       Navigator.push(
                           context,
