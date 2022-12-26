@@ -58,6 +58,9 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                               const BorderRadius.all(Radius.circular(20))),
                       child: TextField(
                         controller: _playerNameController,
+                        onChanged: (value) {
+                          setState(() {});
+                        },
                         decoration:
                             const InputDecoration(border: InputBorder.none),
                       ),
@@ -73,6 +76,7 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                             setState(() {
                               playerList.add(PlayerWidget(
                                   playerName: _playerNameController.text));
+                              _playerNameController.clear();
                             });
                           },
                         ),
