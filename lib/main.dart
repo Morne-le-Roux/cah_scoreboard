@@ -1,4 +1,4 @@
-import 'package:cah_scoreboard/player_input_screen.dart';
+import 'package:cah_scoreboard/home.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -13,7 +13,7 @@ class CAHScoreboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: PlayerInputScreen(),
+      home: HomeScreen(),
     );
   }
 }
