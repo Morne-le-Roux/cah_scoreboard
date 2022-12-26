@@ -32,7 +32,12 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
               const Padding(
                 padding: EdgeInsets.only(top: 20.0),
 //!MAIN SCREEN LOGO
-                child: Logo(),
+                child: Hero(
+                    tag: "LOGO",
+                    child: Material(
+                      color: Colors.transparent,
+                      child: Logo(),
+                    )),
               ),
 
 //!PLAYER LIST
@@ -72,6 +77,8 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                       children: [
                         RoundedButton(
                           text: "Add Player",
+                          color: Colors.black,
+                          textColor: Colors.white,
                           onPressed: () {
                             setState(() {
                               playerList.add(PlayerWidget(
@@ -80,9 +87,14 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                             });
                           },
                         ),
-                        RoundedButton(
-                          text: "Play!",
-                          onPressed: () {},
+                        Hero(
+                          tag: "playButton",
+                          child: RoundedButton(
+                            text: "Play!",
+                            color: Colors.black,
+                            textColor: Colors.white,
+                            onPressed: () {},
+                          ),
                         )
                       ],
                     )
