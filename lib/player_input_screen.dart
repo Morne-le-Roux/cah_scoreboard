@@ -1,4 +1,6 @@
 import 'package:cah_scoreboard/logo_widget.dart';
+import 'package:cah_scoreboard/player_list.dart';
+import 'package:cah_scoreboard/player_widget.dart';
 import "package:flutter/material.dart";
 import "rounded_button.dart";
 
@@ -10,9 +12,15 @@ class PlayerInputScreen extends StatefulWidget {
 }
 
 class _PlayerInputScreenState extends State<PlayerInputScreen> {
+//!VARIABLES
+
+  List<PlayerWidget> playerList = [];
+  final TextEditingController _playerNameController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+//!BACKGROUND COLOR
       backgroundColor: Colors.black,
       body: SafeArea(
         child: Padding(
@@ -23,8 +31,14 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
             children: [
               const Padding(
                 padding: EdgeInsets.only(top: 20.0),
+//!MAIN SCREEN LOGO
                 child: Logo(),
               ),
+
+//!PLAYER LIST
+              PlayerList(playerlist: playerList),
+
+//!BOTTOM INPUT CARD
               Container(
                 padding: const EdgeInsets.all(8),
                 height: 150,
@@ -34,26 +48,33 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    //
-                    //TEXTFIELD
-                    //
+//!TEXTFIELD
+
                     Container(
                       padding: const EdgeInsets.only(left: 10),
                       decoration: BoxDecoration(
                           border: Border.all(color: Colors.black12),
                           borderRadius:
                               const BorderRadius.all(Radius.circular(20))),
-                      child: const TextField(
-                        decoration: InputDecoration(border: InputBorder.none),
+                      child: TextField(
+                        controller: _playerNameController,
+                        decoration:
+                            const InputDecoration(border: InputBorder.none),
                       ),
                     ),
 
+//! BOTTOM TWO BUTTONS
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         RoundedButton(
                           text: "Add Player",
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              playerList.add(PlayerWidget(
+                                  playerName: _playerNameController.text));
+                            });
+                          },
                         ),
                         RoundedButton(
                           text: "Play!",
