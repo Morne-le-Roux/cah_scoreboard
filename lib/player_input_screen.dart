@@ -2,14 +2,14 @@ import 'package:cah_scoreboard/logo_widget.dart';
 import "package:flutter/material.dart";
 import "rounded_button.dart";
 
-class PlayerInput extends StatefulWidget {
-  const PlayerInput({super.key});
+class PlayerInputScreen extends StatefulWidget {
+  const PlayerInputScreen({super.key});
 
   @override
-  State<PlayerInput> createState() => _PlayerInputState();
+  State<PlayerInputScreen> createState() => _PlayerInputScreenState();
 }
 
-class _PlayerInputState extends State<PlayerInput> {
+class _PlayerInputScreenState extends State<PlayerInputScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
