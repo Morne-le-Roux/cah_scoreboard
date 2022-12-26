@@ -2,6 +2,7 @@ import 'package:cah_scoreboard/logo_widget.dart';
 import 'package:cah_scoreboard/player_list.dart';
 import 'package:cah_scoreboard/player_widget.dart';
 import "package:flutter/material.dart";
+import 'package:google_fonts/google_fonts.dart';
 import "rounded_button.dart";
 
 class PlayerInputScreen extends StatefulWidget {
@@ -34,71 +35,75 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
 //!MAIN SCREEN LOGO
                 child: Hero(
                     tag: "LOGO",
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Logo(),
-                    )),
+                    child: Material(color: Colors.transparent, child: Logo())),
               ),
 
 //!PLAYER LIST
               PlayerList(playerlist: playerList),
 
 //!BOTTOM INPUT CARD
-              Container(
-                padding: const EdgeInsets.all(8),
-                height: 150,
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(20))),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-//!TEXTFIELD
-
-                    Container(
-                      padding: const EdgeInsets.only(left: 10),
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.black12),
-                          borderRadius:
-                              const BorderRadius.all(Radius.circular(20))),
-                      child: TextField(
-                        controller: _playerNameController,
-                        onChanged: (value) {
-                          setState(() {});
-                        },
-                        decoration:
-                            const InputDecoration(border: InputBorder.none),
-                      ),
-                    ),
-
-//! BOTTOM TWO BUTTONS
-                    Row(
+              Hero(
+                tag: "playButton",
+                child: Material(
+                  color: Colors.transparent,
+                  child: Container(
+                    padding: const EdgeInsets.all(8),
+                    height: 125,
+                    decoration: const BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.all(Radius.circular(20))),
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        RoundedButton(
-                          text: "Add Player",
-                          color: Colors.black,
-                          textColor: Colors.white,
-                          onPressed: () {
-                            setState(() {
-                              playerList.add(PlayerWidget(
-                                  playerName: _playerNameController.text));
-                              _playerNameController.clear();
-                            });
-                          },
-                        ),
-                        Hero(
-                          tag: "playButton",
-                          child: RoundedButton(
-                            text: "Play!",
-                            color: Colors.black,
-                            textColor: Colors.white,
-                            onPressed: () {},
+                        //!TEXTFIELD
+
+                        Container(
+                          padding: const EdgeInsets.only(left: 10),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.black12),
+                              borderRadius:
+                                  const BorderRadius.all(Radius.circular(20))),
+                          child: TextField(
+                            controller: _playerNameController,
+                            onChanged: (value) {
+                              setState(() {});
+                            },
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "Add a player",
+                                hintStyle: GoogleFonts.oswald(
+                                  color: Colors.black26,
+                                )),
                           ),
+                        ),
+
+                        //! BOTTOM TWO BUTTONS
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            RoundedButton(
+                              text: "Add Player",
+                              color: Colors.black,
+                              textColor: Colors.white,
+                              onPressed: () {
+                                setState(() {
+                                  playerList.add(PlayerWidget(
+                                      playerName: _playerNameController.text));
+                                  _playerNameController.clear();
+                                });
+                              },
+                            ),
+                            RoundedButton(
+                              text: "Play!",
+                              color: Colors.black,
+                              textColor: Colors.white,
+                              onPressed: () {},
+                            )
+                          ],
                         )
                       ],
-                    )
-                  ],
+                    ),
+                  ),
                 ),
               ),
             ],

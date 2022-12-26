@@ -214,6 +214,20 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.2.4"
+  simple_animations:
+    dependency: transitive
+    description:
+      name: simple_animations
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.2.0"
+  simplified_flutter_animations:
+    dependency: "direct main"
+    description:
+      name: simplified_flutter_animations
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0+1"
   sky_engine:
     dependency: transitive
     description: flutter

@@ -26,6 +26,12 @@ class HomeScreen extends StatelessWidget {
                       child: Logo(),
                     )),
               ),
+              const Hero(
+                tag: "newListItem",
+                child: SizedBox(
+                  height: 1,
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(20.0),
                 child: Text(
@@ -34,19 +40,30 @@ class HomeScreen extends StatelessWidget {
                   style: GoogleFonts.oswald(color: Colors.white),
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 20.0),
+                child: Text(
+                  "Doubletap 'CARDS' in the logo to reset and come back to this screen.",
+                  textAlign: TextAlign.center,
+                  style: GoogleFonts.oswald(color: Colors.white),
+                ),
+              ),
               Hero(
                 tag: "playButton",
-                child: RoundedButton(
-                  text: "Play!",
-                  color: Colors.white,
-                  textColor: Colors.black,
-                  onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => const PlayerInputScreen(),
-                        ));
-                  },
+                child: Material(
+                  color: Colors.transparent,
+                  child: RoundedButton(
+                    text: "Play!",
+                    color: Colors.white,
+                    textColor: Colors.black,
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const PlayerInputScreen(),
+                          ));
+                    },
+                  ),
                 ),
               )
             ],

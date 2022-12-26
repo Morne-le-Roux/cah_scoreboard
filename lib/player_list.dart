@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:simplified_flutter_animations/generic_slide_transition.dart';
 import 'player_widget.dart';
 
 class PlayerList extends StatefulWidget {
@@ -18,7 +19,14 @@ class _PlayerListState extends State<PlayerList> {
       child: ListView.builder(
         itemCount: widget.playerlist.length,
         itemBuilder: (context, index) {
-          return widget.playerlist[index];
+          return GenericSlideTransition(
+            curve: Curves.fastOutSlowIn,
+            duration: const Duration(milliseconds: 350),
+            initialOffset: const Offset(0, 10),
+            builder: (context) {
+              return widget.playerlist[index];
+            },
+          );
         },
       ),
     );
