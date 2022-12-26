@@ -12,13 +12,15 @@ class RoundedButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
+        height: 50,
+        width: 200,
         decoration: const BoxDecoration(
             color: Colors.black,
-            borderRadius: BorderRadius.all(Radius.circular(10))),
+            borderRadius: BorderRadius.all(Radius.circular(40))),
         child: Center(
             child: Text(
           text,
-          style: GoogleFonts.oswald(color: Colors.white),
+          style: GoogleFonts.oswald(color: Colors.white, fontSize: 20),
         )),
       ),
     );

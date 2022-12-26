@@ -49,11 +49,16 @@ class _PlayerInputState extends State<PlayerInput> {
                     ),
 
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         RoundedButton(
                           text: "Add Player",
                           onPressed: () {},
                         ),
+                        RoundedButton(
+                          text: "Play!",
+                          onPressed: () {},
+                        )
                       ],
                     )
                   ],
