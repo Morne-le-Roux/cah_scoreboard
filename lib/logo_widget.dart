@@ -19,20 +19,20 @@ class Logo extends StatelessWidget {
             child: Text("CARDS",
                 style: GoogleFonts.oswald(
                     color: Colors.white,
-                    fontSize: 90,
+                    fontSize: 80,
                     fontWeight: FontWeight.w500,
                     height: 0.9)),
           ),
           Text("AGAINST",
               style: GoogleFonts.oswald(
                   color: Colors.white,
-                  fontSize: 90,
+                  fontSize: 80,
                   fontWeight: FontWeight.w500,
                   height: 0.9)),
           Text("HUMANITY",
               style: GoogleFonts.oswald(
                   color: Colors.white,
-                  fontSize: 90,
+                  fontSize: 80,
                   fontWeight: FontWeight.w500,
                   height: 0.9)),
         ],

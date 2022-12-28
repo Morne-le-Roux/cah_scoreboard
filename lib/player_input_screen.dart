@@ -28,8 +28,8 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
       backgroundColor: Colors.black,
       body: SafeArea(
         child: LocalHeroScope(
-          curve: Curves.elasticOut,
-          duration: const Duration(milliseconds: 1000),
+          curve: Curves.easeInOut,
+          duration: const Duration(milliseconds: 150),
           child: Padding(
             padding: const EdgeInsets.all(10),
             child: Column(
@@ -112,7 +112,7 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                                     text: "Add Player",
                                     color: Colors.black,
                                     textColor: Colors.white,
-                                    size: 200,
+                                    size: 150,
                                     onPressed: () {
                                       setState(() {
                                         playerList.add(PlayerWidget(
@@ -126,7 +126,7 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                                     text: "Play!",
                                     color: Colors.black,
                                     textColor: Colors.white,
-                                    size: 200,
+                                    size: 150,
                                     onPressed: () {
                                       setState(() {
                                         busyPlaying = true;

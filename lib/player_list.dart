@@ -15,7 +15,7 @@ class _PlayerListState extends State<PlayerList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 550,
+      height: 350,
       child: ListView.builder(
         itemCount: widget.playerlist.length,
         itemBuilder: (context, index) {
