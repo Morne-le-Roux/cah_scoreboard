@@ -1,16 +1,3 @@
-# cah_scoreboard
+A basic scoreboard/scorekeeping app for the "Cards Against Humanity" card game.
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+This app has no relation to the official Cards Against Humanity company or card game. This was solely built for personal use and I decided to make the code code public for anyone who is interested. Built with Flutter/Dart.
