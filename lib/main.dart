@@ -1,8 +1,10 @@
 import 'package:cah_scoreboard/home.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() {
   runApp(const CAHScoreboard());
+  GoogleFonts.config.allowRuntimeFetching = false;
 }
 
 class CAHScoreboard extends StatelessWidget {

@@ -14,8 +14,8 @@ class PlayerList extends StatefulWidget {
 class _PlayerListState extends State<PlayerList> {
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 350,
+    return Container(
+      constraints: const BoxConstraints(maxHeight: 470),
       child: ListView.builder(
         itemCount: widget.playerlist.length,
         itemBuilder: (context, index) {
