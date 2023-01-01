@@ -23,7 +23,7 @@ class _PlayerListState extends State<PlayerList> {
           return GenericSlideTransition(
             curve: Curves.fastOutSlowIn,
             duration: const Duration(milliseconds: 350),
-            initialOffset: const Offset(0, 10),
+            initialOffset: const Offset(0, 1),
             builder: (context) {
               return widget.playerlist[index];
             },
