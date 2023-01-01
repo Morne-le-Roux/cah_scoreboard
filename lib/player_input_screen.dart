@@ -3,7 +3,6 @@ import 'package:cah_scoreboard/player_list.dart';
 import 'package:cah_scoreboard/player_widget.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
-import "package:local_hero/local_hero.dart";
 
 class PlayerInputScreen extends StatefulWidget {
   const PlayerInputScreen({super.key});
@@ -26,65 +25,60 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
       backgroundColor: Colors.black,
       body: SingleChildScrollView(
         child: SafeArea(
-          child: LocalHeroScope(
-            curve: Curves.easeInOut,
-            duration: const Duration(milliseconds: 150),
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const Padding(
-                    padding: EdgeInsets.only(top: 20.0),
-                    //!MAIN SCREEN LOGO
-                    child: Hero(
-                        tag: "LOGO",
-                        child:
-                            Material(color: Colors.transparent, child: Logo())),
-                  ),
+          child: Padding(
+            padding: const EdgeInsets.all(20),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const Padding(
+                  padding: EdgeInsets.only(top: 20.0),
+                  //!MAIN SCREEN LOGO
+                  child: Hero(
+                      tag: "LOGO",
+                      child:
+                          Material(color: Colors.transparent, child: Logo())),
+                ),
 
-                  //!PLAYER LIST
-                  PlayerList(playerlist: playerList),
+                //!PLAYER LIST
+                PlayerList(playerlist: playerList),
 
-                  //!BOTTOM INPUT CARD
-                  Hero(
-                    tag: "playButton",
-                    child: Material(
-                      color: Colors.transparent,
-                      child: Container(
-                        padding: const EdgeInsets.all(8),
-                        decoration: const BoxDecoration(
-                            color: Colors.white,
-                            borderRadius:
-                                BorderRadius.all(Radius.circular(20))),
-                        child: TextField(
-                          onEditingComplete: () {
-                            setState(() {
-                              playerList.add(PlayerWidget(
-                                  playerName: _playerNameController.text));
-                              _playerNameController.clear();
-                            });
-                          },
-                          controller: _playerNameController,
-                          onChanged: (value) {
-                            setState(() {});
-                          },
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hintText: "Add a player",
-                              hintStyle: GoogleFonts.oswald(
-                                color: Colors.black26,
-                              )),
-                        ),
+                //!BOTTOM INPUT CARD
+                Hero(
+                  tag: "playButton",
+                  child: Material(
+                    color: Colors.transparent,
+                    child: Container(
+                      padding: const EdgeInsets.all(5),
+                      decoration: const BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.all(Radius.circular(20))),
+                      child: TextField(
+                        onEditingComplete: () {
+                          setState(() {
+                            playerList.add(PlayerWidget(
+                                playerName: _playerNameController.text));
+                            _playerNameController.clear();
+                          });
+                        },
+                        controller: _playerNameController,
+                        onChanged: (value) {
+                          setState(() {});
+                        },
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            hintText: "Add a player",
+                            hintStyle: GoogleFonts.oswald(
+                              color: Colors.black26,
+                            )),
                       ),
                     ),
                   ),
-                  Padding(
-                      padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).viewInsets.bottom))
-                ],
-              ),
+                ),
+                Padding(
+                    padding: EdgeInsets.only(
+                        bottom: MediaQuery.of(context).viewInsets.bottom))
+              ],
             ),
           ),
         ),

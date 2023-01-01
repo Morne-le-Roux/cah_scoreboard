@@ -17,6 +17,7 @@ class _PlayerListState extends State<PlayerList> {
     return Container(
       constraints: const BoxConstraints(maxHeight: 470),
       child: ListView.builder(
+        shrinkWrap: true,
         itemCount: widget.playerlist.length,
         itemBuilder: (context, index) {
           return GenericSlideTransition(

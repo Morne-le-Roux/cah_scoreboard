@@ -30,7 +30,7 @@ class _PlayerWidgetState extends State<PlayerWidget> {
         });
       },
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(vertical: 3),
         child: Container(
           decoration: const BoxDecoration(
               color: Colors.white,
