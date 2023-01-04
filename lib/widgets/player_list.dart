@@ -1,3 +1,5 @@
+//LISTVIEW BUILDER TO VIEW MAIN LIST OF PLAYERS ON THE INPUT SCREEN//
+
 import 'package:flutter/material.dart';
 import 'package:simplified_flutter_animations/generic_slide_transition.dart';
 import 'player_widget.dart';

@@ -1,3 +1,5 @@
+//PLAYER WIDGET. HAS THE NAME AND FUNCTIONS OF THE WIDGET
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -14,6 +16,7 @@ class PlayerWidget extends StatefulWidget {
 }
 
 class _PlayerWidgetState extends State<PlayerWidget> {
+//PLAYER SCORE
   int score = 0;
 
   @override
@@ -21,14 +24,18 @@ class _PlayerWidgetState extends State<PlayerWidget> {
     return GestureDetector(
       onTap: () {
         setState(() {
+//INCREASES SCORE WITH 1 ON TAP
           score++;
         });
       },
       onLongPress: () {
         setState(() {
+//DECREASES SCORE WITH ONE ON LONG PRESS
           score--;
         });
       },
+
+//LOOK AND FUNC OF THE WIDGET
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 3),
         child: Container(

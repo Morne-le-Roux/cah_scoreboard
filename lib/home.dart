@@ -1,6 +1,9 @@
-import 'package:cah_scoreboard/logo_widget.dart';
+//THIS SCREEN OPENS WHEN THE APP IS OPENED. JUST GIVES INFO OF THE CONTROLS
+//WITH A BUTTON TO GO TO THE MAIN SCREEN
+
+import 'package:cah_scoreboard/widgets/logo_widget.dart';
 import 'package:cah_scoreboard/player_input_screen.dart';
-import 'package:cah_scoreboard/rounded_button.dart';
+import 'package:cah_scoreboard/widgets/rounded_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -21,6 +24,7 @@ class HomeScreen extends StatelessWidget {
               const Expanded(
                 child: Hero(
                     tag: "LOGO",
+//!below is wrapped in a material widget to fix a bug in flutter regarding text and animations
                     child: Material(
                       color: Colors.transparent,
                       child: Logo(),
@@ -50,6 +54,7 @@ class HomeScreen extends StatelessWidget {
               ),
               Hero(
                 tag: "playButton",
+//!below is wrapped in a material widget to fix a bug in flutter regarding text and animations
                 child: Material(
                   color: Colors.transparent,
                   child: RoundedButton(

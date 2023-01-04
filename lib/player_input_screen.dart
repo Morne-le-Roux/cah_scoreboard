@@ -1,6 +1,9 @@
-import 'package:cah_scoreboard/logo_widget.dart';
-import 'package:cah_scoreboard/player_list.dart';
-import 'package:cah_scoreboard/player_widget.dart';
+//"DIE MAIN KONYN"
+//THIS IS MAIN SCREEN THAT DOES ALL THE STUFF
+
+import 'package:cah_scoreboard/widgets/logo_widget.dart';
+import 'package:cah_scoreboard/widgets/player_list.dart';
+import 'package:cah_scoreboard/widgets/player_widget.dart';
 import "package:flutter/material.dart";
 import 'package:google_fonts/google_fonts.dart';
 
@@ -33,19 +36,22 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
               children: [
                 const Padding(
                   padding: EdgeInsets.only(top: 20.0),
-                  //!MAIN SCREEN LOGO
+//!MAIN SCREEN LOGO
                   child: Hero(
                       tag: "LOGO",
                       child:
+//!below is wrapped in a material widget to fix a bug in flutter regarding text and animations
                           Material(color: Colors.transparent, child: Logo())),
                 ),
 
-                //!PLAYER LIST
+//!PLAYER LIST
                 PlayerList(playerlist: playerList),
 
-                //!BOTTOM INPUT CARD
+//!BOTTOM INPUT CARD
                 Hero(
                   tag: "playButton",
+
+//!below is wrapped in a material widget to fix a bug in flutter regarding text and animations
                   child: Material(
                     color: Colors.transparent,
                     child: Container(
