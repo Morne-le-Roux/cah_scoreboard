@@ -19,7 +19,7 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
 
   List<PlayerWidget> playerList = [];
   final TextEditingController _playerNameController = TextEditingController();
-  bool busyPlaying = false;
+  bool showInput = true;
 
   @override
   Widget build(BuildContext context) {
@@ -52,34 +52,49 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                   tag: "playButton",
 
 //!below is wrapped in a material widget to fix a bug in flutter regarding text and animations
-                  child: Material(
-                    color: Colors.transparent,
-                    child: Container(
-                      padding: const EdgeInsets.all(5),
-                      decoration: const BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.all(Radius.circular(20))),
-                      child: TextField(
-                        onEditingComplete: () {
-                          setState(() {
-                            playerList.add(PlayerWidget(
-                                playerName: _playerNameController.text));
-                            _playerNameController.clear();
-                          });
-                        },
-                        controller: _playerNameController,
-                        onChanged: (value) {
-                          setState(() {});
-                        },
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hintText: "Add a player",
-                            hintStyle: GoogleFonts.oswald(
-                              color: Colors.black26,
-                            )),
+                  child: Visibility(
+                    visible: showInput,
+                    child: GestureDetector(
+                      onLongPress: () {
+                        setState(() {
+                          showInput = false;
+                        });
+                      },
+                      child: Material(
+                        color: Colors.transparent,
+                        child: Container(
+                          padding: const EdgeInsets.all(10),
+                          decoration: const BoxDecoration(
+                              color: Colors.white,
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(20))),
+                          child: TextField(
+                            onEditingComplete: () {
+                              setState(() {
+                                playerList.add(PlayerWidget(
+                                    playerName: _playerNameController.text));
+                                _playerNameController.clear();
+                              });
+                            },
+                            controller: _playerNameController,
+                            onChanged: (value) {
+                              setState(() {});
+                            },
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                hintText: "Add a player",
+                                hintStyle: GoogleFonts.oswald(
+                                  color: Colors.black26,
+                                )),
+                          ),
+                        ),
                       ),
                     ),
                   ),
+                ),
+                Text(
+                  "Long press to hide input",
+                  style: GoogleFonts.oswald(color: Colors.white),
                 ),
                 Padding(
                     padding: EdgeInsets.only(
