@@ -99,9 +99,11 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                             ),
                           ),
                         ),
-                        Text(
-                          "Long press to hide input",
-                          style: GoogleFonts.oswald(color: Colors.white),
+                        Material(
+                          child: Text(
+                            "Long press to hide input",
+                            style: GoogleFonts.oswald(color: Colors.white),
+                          ),
                         ),
                       ],
                     ),
