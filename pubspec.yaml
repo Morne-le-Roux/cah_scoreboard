@@ -29,12 +29,12 @@ environment:
 # the latest version available on pub.dev. To see which dependencies have newer
 # versions available, run `flutter pub outdated`.
 dependencies:
-  cupertino_icons: ^1.0.2
+  cupertino_icons: 
   flutter:
     sdk: flutter
-  google_fonts: ^3.0.1
-  local_hero: ^0.2.0
-  simplified_flutter_animations: ^1.0.0+1
+  google_fonts: 
+  local_hero: 
+  simplified_flutter_animations:
 
 dev_dependencies:
   flutter_lints: ^2.0.0

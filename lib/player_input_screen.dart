@@ -51,7 +51,7 @@ class _PlayerInputScreenState extends State<PlayerInputScreen> {
                 Hero(
                   tag: "playButton",
 
-//! visibilty show and hides the naming input text field
+//! visibility show and hides the naming input text field
                   child: Visibility(
                     visible: showInput,
                     child: Column(
