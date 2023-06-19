@@ -2,5 +2,17 @@
     "cSpell.words": [
         "Doubletap",
         "playerlist"
-    ]
+    ],
+    "workbench.colorCustomizations": {
+        "titleBar.activeBackground": "#70d7f9",
+        "titleBar.activeForeground": "#000000",
+        "titleBar.inactiveBackground": "#70d7f9",
+        "titleBar.inactiveForeground": "#000000",
+        "titleBar.border": "#70d7f9",
+        "activityBar.foreground": "#70d7f9",
+        "tab.activeBorder": "#70d7f9",
+        "iLoveWorkSpaceColors": true,
+        "iLoveWorkSpaceRandom": false,
+        "useWorkspaceLite": true
+    }
 }
