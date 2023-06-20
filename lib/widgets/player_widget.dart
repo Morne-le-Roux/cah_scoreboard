@@ -18,6 +18,7 @@ class PlayerWidget extends StatefulWidget {
 class _PlayerWidgetState extends State<PlayerWidget> {
 //PLAYER SCORE
   int score = 0;
+  double height = 60;
 
   @override
   Widget build(BuildContext context) {
@@ -26,23 +27,27 @@ class _PlayerWidgetState extends State<PlayerWidget> {
         setState(() {
 //INCREASES SCORE WITH 1 ON TAP
           score++;
+          height += 10;
         });
       },
       onLongPress: () {
         setState(() {
 //DECREASES SCORE WITH ONE ON LONG PRESS
           score--;
+          height -= 10;
         });
       },
 
 //LOOK AND FUNC OF THE WIDGET
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 3),
-        child: Container(
+        child: AnimatedContainer(
+          duration: const Duration(microseconds: 1000),
+          curve: Curves.bounceInOut,
           decoration: const BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.all(Radius.circular(20))),
-          height: 60,
+          height: height,
           padding: const EdgeInsets.all(10),
 
 //! MAIN ROW
